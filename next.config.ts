@@ -6,10 +6,6 @@ const nextConfig: NextConfig = {
     // Enable type checking during build
     ignoreBuildErrors: false,
   },
-  eslint: {
-    // Enable linting during build
-    ignoreDuringBuilds: false,
-  },
 };
 
 export default nextConfig;
