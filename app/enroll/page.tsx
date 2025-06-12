@@ -65,7 +65,7 @@ export default function EnrollPage() {
       if (!res.ok) throw new Error(result.error || "Something went wrong");
 
       setMessage(
-        "Enrollment submitted successfully! We'll review your application and get back to you soon."
+        "Enrollment submitted successfully! We will review your application and get back to you soon."
       );
       setMessageType("success");
       form.reset();
