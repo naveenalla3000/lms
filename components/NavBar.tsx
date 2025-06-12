@@ -1,37 +1,46 @@
-"use client"
+"use client";
 
-import { ChevronDown, Globe, HelpCircle, Mail, Menu, ShoppingCart, X, ImportIcon as Translate } from "lucide-react"
-import Link from "next/link"
-import { useState } from "react"
+import {
+  ChevronDown,
+  Globe,
+  HelpCircle,
+  Mail,
+  Menu,
+  ShoppingCart,
+  X,
+  ImportIcon as Translate,
+} from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default function NavBar() {
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleMouseEnter = (dropdown: string) => {
     if (window.innerWidth >= 768) {
-      setActiveDropdown(dropdown)
+      setActiveDropdown(dropdown);
     }
-  }
+  };
 
   const handleMouseLeave = () => {
     if (window.innerWidth >= 768) {
-      setActiveDropdown(null)
+      setActiveDropdown(null);
     }
-  }
+  };
 
   const toggleDropdown = (dropdown: string) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
-  }
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen)
+    setMobileMenuOpen(!mobileMenuOpen);
     // Close any open dropdowns when toggling the mobile menu
-    setActiveDropdown(null)
-  }
+    setActiveDropdown(null);
+  };
 
   return (
     <header className="w-full bg-white border-b border-gray-200">
@@ -47,16 +56,31 @@ export default function NavBar() {
               </div>
             </div>
             <div>
-              <div className="text-sm sm:text-lg font-semibold text-gray-900">School of</div>
-              <div className="text-sm sm:text-lg font-semibold text-gray-900">Business Management</div>
-              <div className="text-xs sm:text-sm text-gray-600">Vijayawada · India</div>
+              <div className="text-sm sm:text-lg font-semibold text-gray-900">
+                School of
+              </div>
+              <div className="text-sm sm:text-lg font-semibold text-gray-900">
+                Business Management
+              </div>
+              <div className="text-xs sm:text-sm text-gray-600">
+                Vijayawada · India
+              </div>
             </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden">
-            <Button variant="ghost" size="icon" onClick={toggleMobileMenu} aria-label="Toggle menu">
-              {mobileMenuOpen ? <X className="h-6 w-6 text-gray-700" /> : <Menu className="h-6 w-6 text-gray-700" />}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6 text-gray-700" />
+              ) : (
+                <Menu className="h-6 w-6 text-gray-700" />
+              )}
             </Button>
           </div>
 
@@ -64,7 +88,10 @@ export default function NavBar() {
           <div className="hidden md:flex items-center space-x-8">
             {/* Navigation Menu */}
             <nav className="flex items-center space-x-8">
-              <Link href="#" className="text-gray-700 hover:text-gray-900 font-medium">
+              <Link
+                href="/"
+                className="text-gray-700 hover:text-gray-900 font-medium"
+              >
                 Home
               </Link>
 
@@ -83,10 +110,16 @@ export default function NavBar() {
                     {/* Triangle indicator */}
                     <div className="absolute -top-2 left-6 w-4 h-4 bg-white border-l border-t border-gray-200 transform rotate-45"></div>
                     <div className="py-1">
-                      <Link href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                      <Link
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      >
                         Online Courses
                       </Link>
-                      <Link href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                      <Link
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      >
                         Language Tests
                       </Link>
                     </div>
@@ -109,16 +142,28 @@ export default function NavBar() {
                     {/* Triangle indicator */}
                     <div className="absolute -top-2 left-6 w-4 h-4 bg-white border-l border-t border-gray-200 transform rotate-45"></div>
                     <div className="py-1">
-                      <Link href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                      <Link
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      >
                         About Us
                       </Link>
-                      <Link href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                      <Link
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      >
                         Certificate Verification
                       </Link>
-                      <Link href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                      <Link
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      >
                         Social Impact
                       </Link>
-                      <Link href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                      <Link
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      >
                         Jobs
                       </Link>
                     </div>
@@ -141,15 +186,24 @@ export default function NavBar() {
                     {/* Triangle indicator */}
                     <div className="absolute -top-2 left-6 w-4 h-4 bg-white border-l border-t border-gray-200 transform rotate-45"></div>
                     <div className="py-1">
-                      <Link href="#" className="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                      <Link
+                        href="#"
+                        className="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      >
                         <HelpCircle className="h-4 w-4 mr-2" />
                         <span>Help Center</span>
                       </Link>
-                      <Link href="#" className="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                      <Link
+                        href="#"
+                        className="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      >
                         <Mail className="h-4 w-4 mr-2" />
                         <span>Contact</span>
                       </Link>
-                      <Link href="#" className="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100">
+                      <Link
+                        href="#"
+                        className="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      >
                         <Translate className="h-4 w-4 mr-2" />
                         <span>Translate Website</span>
                       </Link>
@@ -161,8 +215,14 @@ export default function NavBar() {
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-4">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2">ENROLL</Button>
-              <Button variant="outline" size="icon" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+              <Link href={"/enroll"} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md">
+                ENROLL
+              </Link>
+              <Button
+                variant="outline"
+                size="icon"
+                className="border-blue-600 text-blue-600 hover:bg-blue-50"
+              >
                 <ShoppingCart className="h-4 w-4" />
               </Button>
             </div>
@@ -174,7 +234,7 @@ export default function NavBar() {
       <div
         className={cn(
           "fixed inset-0 bg-white z-50 flex flex-col md:hidden transition-transform duration-300 ease-in-out",
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full",
+          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
@@ -187,11 +247,20 @@ export default function NavBar() {
               </div>
             </div>
             <div>
-              <div className="text-sm font-semibold text-gray-900">School of</div>
-              <div className="text-sm font-semibold text-gray-900">Business Management</div>
+              <div className="text-sm font-semibold text-gray-900">
+                School of
+              </div>
+              <div className="text-sm font-semibold text-gray-900">
+                Business Management
+              </div>
             </div>
           </div>
-          <Button variant="ghost" size="icon" onClick={toggleMobileMenu} aria-label="Close menu">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleMobileMenu}
+            aria-label="Close menu"
+          >
             <X className="h-6 w-6 text-gray-700" />
           </Button>
         </div>
@@ -199,7 +268,7 @@ export default function NavBar() {
         <div className="flex-1 overflow-y-auto p-4">
           <nav className="flex flex-col space-y-4">
             <Link
-              href="#"
+              href="/"
               className="text-gray-700 hover:text-gray-900 font-medium py-2 border-b border-gray-100"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -214,7 +283,10 @@ export default function NavBar() {
               >
                 <span>Courses</span>
                 <ChevronDown
-                  className={cn("h-4 w-4 transition-transform", activeDropdown === "courses" ? "rotate-180" : "")}
+                  className={cn(
+                    "h-4 w-4 transition-transform",
+                    activeDropdown === "courses" ? "rotate-180" : ""
+                  )}
                 />
               </button>
               {activeDropdown === "courses" && (
@@ -245,7 +317,10 @@ export default function NavBar() {
               >
                 <span>Institute</span>
                 <ChevronDown
-                  className={cn("h-4 w-4 transition-transform", activeDropdown === "institute" ? "rotate-180" : "")}
+                  className={cn(
+                    "h-4 w-4 transition-transform",
+                    activeDropdown === "institute" ? "rotate-180" : ""
+                  )}
                 />
               </button>
               {activeDropdown === "institute" && (
@@ -293,7 +368,10 @@ export default function NavBar() {
                   <span>Language & Help</span>
                 </div>
                 <ChevronDown
-                  className={cn("h-4 w-4 transition-transform", activeDropdown === "language" ? "rotate-180" : "")}
+                  className={cn(
+                    "h-4 w-4 transition-transform",
+                    activeDropdown === "language" ? "rotate-180" : ""
+                  )}
                 />
               </button>
               {activeDropdown === "language" && (
@@ -331,7 +409,12 @@ export default function NavBar() {
         {/* Mobile Action Buttons */}
         <div className="p-4 border-t border-gray-200">
           <div className="grid grid-cols-2 gap-4">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">ENROLL</Button>
+            <Link
+              href="/enroll"
+              className="bg-blue-600 hover:bg-blue-700 text-white w-full"
+            >
+              <span>ENROLL</span>
+            </Link>
             <Button
               variant="outline"
               className="border-blue-600 text-blue-600 hover:bg-blue-50 w-full flex items-center justify-center"
@@ -343,5 +426,5 @@ export default function NavBar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
